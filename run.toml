@@ -1,0 +1,29 @@
+#name
+name="mix_ethanol_water"
+
+# path (contains ONE *)
+path_jobs="*.input"
+
+# submit
+sub="PBS"
+submit="qsub"
+
+# queue
+q="long"
+
+# Nodes
+N=1
+
+# cpus per Node
+n=20
+
+# cores per cpu
+c=2
+
+# time (String hh:mm:ss)
+time="36:00:00"
+
+# job template
+path_job_template="/home/st/st_st/st_st163811/workspace/software/lammps_setup/template_run.sh"
+mem = 6000
+
