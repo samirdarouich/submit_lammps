@@ -17,7 +17,7 @@ def run(tomlfile):
 
     locs = sorted( glob.glob(d["path_jobs"], recursive = True) )
 
-    print("Found paths\n",locs)
+    print("Found paths\n",locs,"\n\n")
 
     d["cores"] = d["n"]*d["c"]
 
@@ -29,14 +29,14 @@ def run(tomlfile):
     os.makedirs("job_files",exist_ok=True)
 
     for i,job in enumerate(jobs):
-        print("Exectued job folder\n",job[0])
+        print("\nExectued job folder\n",job[0])
         d["job"]     = job
         d["jobname"] = "%s_%d"%(d["name"],i)
         d["out"]     = "LOG_%s"%d["jobname"]
         run          = "job_files/run_%d.sh"%i
         with open(run, 'w') as f: f.write(template.render( x=d  ))
         console       = " ".join( [ d["submit"] ,run ] )
-        print(console)
+        print(console,"\n")
         os.system( console  )
 
 def cli():

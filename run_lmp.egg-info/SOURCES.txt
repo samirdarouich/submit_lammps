@@ -1,3 +1,4 @@
+LICENSE
 setup.py
 run_lmp/__init__.py
 run_lmp/main.py
